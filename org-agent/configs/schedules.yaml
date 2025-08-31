@@ -1,0 +1,6 @@
+- id: daily_planner
+  cron: "0 8 * * 1-5"
+  job: daily_planner
+- id: followups
+  cron: "0 15 * * 1-5"
+  job: send_followups

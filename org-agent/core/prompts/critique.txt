@@ -1,0 +1,2 @@
+Score the plan on: clarity, feasibility, risk, time.
+If weak, respond: {"revise": true, "notes": "..."} else {"revise": false}

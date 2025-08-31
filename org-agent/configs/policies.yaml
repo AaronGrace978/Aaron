@@ -1,0 +1,7 @@
+actions:
+  irreversible_require_confirm: true
+  max_auto_emails_per_run: 2
+privacy:
+  redact_pii_in_logs: true
+  allowed_domains:
+    - yourcompany.com
