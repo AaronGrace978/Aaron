@@ -2,7 +2,6 @@ from __future__ import annotations
 from typing import Dict, Any
 from .planner import plan_tasks, critique_plan
 from .memory import ShortMemory, EpisodicMemory
-from . import retrieval
 from .state import AgentContext
 
 
@@ -10,6 +9,8 @@ def run_agent(user_msg: str, ctx: AgentContext) -> tuple[Dict[str, Any], str]:
 	# 1) retrieve context
 	support = []
 	try:
+		# Lazy import to avoid optional chromadb dependency at import time
+		from . import retrieval  # type: ignore
 		support = retrieval.query(user_msg, k=6)
 	except Exception:
 		support = []
