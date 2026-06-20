@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "Offline Quest",
+    "slug": "offlinequest",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0f1410"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.offlinequest.app",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "Offline Quest uses your microphone for voice check-ins and mood logging."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0f1410"
+      },
+      "package": "com.offlinequest.app",
+      "permissions": ["RECORD_AUDIO"],
+      "edgeToEdgeEnabled": true
+    }
+  }
+}
