@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Steam Deck Claw
+Comment=Talk to your AI claw — desktop assistant powered by Ollama Cloud
+Exec=@INSTALL_DIR@/scripts/launch.sh
+Icon=utilities-terminal
+Terminal=false
+Categories=Utility;AI;
+StartupNotify=true
