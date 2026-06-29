@@ -1,0 +1,59 @@
+// Steam Deck Claw — OpenClaw config template for Ollama Cloud + desktop mode.
+// Copied to ~/.openclaw/openclaw.json5 by scripts/configure.sh
+{
+  env: {
+    OLLAMA_API_KEY: "$OLLAMA_API_KEY",
+  },
+
+  gateway: {
+    port: 18789,
+    bind: "loopback",
+    auth: {
+      mode: "token",
+      token: "$STEAM_DECK_CLAW_GATEWAY_TOKEN",
+    },
+    controlUi: {
+      enabled: true,
+    },
+  },
+
+  models: {
+    providers: {
+      "ollama-cloud": {
+        baseUrl: "https://ollama.com",
+        apiKey: "$OLLAMA_API_KEY",
+        api: "ollama",
+      },
+    },
+    defaults: {
+      provider: "ollama-cloud",
+    },
+  },
+
+  agents: {
+    defaults: {
+      model: { primary: "$STEAM_DECK_CLAW_MODEL" },
+      workspace: "~/.openclaw/workspace",
+      sandbox: {
+        mode: "non-main",
+      },
+      tools: {
+        allow: ["read", "write", "edit", "exec", "sessions_list", "sessions_history"],
+        deny: ["browser", "canvas", "nodes", "cron", "discord", "gateway"],
+        exec: {
+          host: "gateway",
+          security: "allowlist",
+          ask: "on-miss",
+        },
+      },
+    },
+  },
+
+  skills: {
+    entries: {
+      "steam-deck-desktop": {
+        enabled: true,
+      },
+    },
+  },
+}

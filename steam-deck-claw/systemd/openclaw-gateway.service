@@ -1,0 +1,15 @@
+[Unit]
+Description=OpenClaw Gateway (Steam Deck Claw)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=-@CONFIG_DIR@/.env
+Environment=OLLAMA_API_KEY
+ExecStart=@REPO_ROOT@/scripts/gateway.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
